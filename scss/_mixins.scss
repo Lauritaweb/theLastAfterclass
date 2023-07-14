@@ -1,0 +1,128 @@
+//extends
+.btn-gral{
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 6px;
+    background-color: $secondaryColor;
+}
+
+.btn-rounded{
+    @extend .btn-gral;
+    border-radius: 4px;
+}
+
+.header-gral{
+    height: 40vh;
+    background-position: top center;
+    background-size: cover;
+    background-image: url(../img/headers/header.jpg);
+}
+
+.header-contacto{
+    @extend .header-gral;
+    background-image: url(../img/headers/header2.jpg);
+}
+
+.header-novedades{
+    @extend .header-gral;
+    background-image: url(../img/headers/header3.jpg);
+}
+
+//mixins
+@mixin textos ($size,$line,$color,$padding,$align){
+    font-size: $size;//variable local
+    line-height: $line; //variable local
+    color: $color; //variable local
+    padding: $padding;//variable local
+    font-family: $mainFont; //variable global
+    @if $align == right{text-align: right}
+    @else if $align == center{text-align: center}
+    @else if $align == left {text-align: left}
+}
+
+p{
+    @include textos(1.1em, 1.4em, rgb(131, 131, 131), 4px, right)
+}
+
+.text-box{
+    @include textos(1em,1.5em ,rgb(45, 44, 44) ,10px, left )
+}
+
+
+// p{
+//     @include textos(1.1em, 1.4em, red, 4px)
+// }
+
+@mixin flex($dire,$justify,$align,$wrap){
+    display: flex;
+    flex-direction: $dire;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// .box-fede{
+//     margin: auto;
+//     @include textos(1em,1.2em ,red ,10px, right );
+//     @extend .btn-gral;
+// }
+
+//maps
+$paleta:(
+    'uno': #af40f6,
+    'dos': #df1ce6,
+    'tres':#bb20c1,
+    'cuatro':#ecdde9,
+    'cinco': #9b9a9b,
+    'seis': #292829,
+    'siete':#e205bb,
+    'ocho':#dfa1d4,
+    'nueve':#bd9eb8,
+    'diez':#e7cfe3,
+    'once': #6e646c,
+    'doce': #7f3472,
+    'trece': 10px 10px 5px 0px rgba(0,0,0,0.75),
+);
+
+
+//math
+.box{
+	width: $width;
+	height: $height + 5vh;
+	background-color: grey;
+}
+
+// // condicionales 
+.icon-lang{
+	width: 50px;
+	height: 50px;
+	background-size:contain;
+	background-position:center;
+	@if $lang == es {background-image: url(../img/icons/icono-es.jpg)}
+	@else if $lang == en {background: url(../img/icons/icono-en.jpg)}
+	@else if $lang == fr {background: url(../img/icons/icono-fr.jpg)}
+	@else{background: url(../img/icons/icono-any.jpg)};
+}
+
+// // bucles
+@for $i from 1 through 6{
+	.text-#{$i}{
+		font-size: .25em *$i;
+	}
+}
+
+// // bucle evolucionado
+@each $icono in facebook, twitter, instagram{
+	.#{$icono}-icon{
+		background-image:url(../img/icons/#{$icono}.svg);
+		width: 30px;
+		height: 30px;
+		background-size:100%;
+		list-style: none;
+		margin-right: 6px;
+	}
+}
+

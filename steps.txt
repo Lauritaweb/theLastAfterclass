@@ -1,0 +1,62 @@
+1- TERMINAL ---- Me ubico en directorio de mi proyecto
+2- TERMINAL ---- npm init
+3- TERMINAL ---- npm install sass
+4- EDITOR   ---- Abrir package.json
+5- TERMINAL ---- Agregar los sgt comandos donde estan los scripts --- 
+		"sass": "sass",
+		"sass:watch": "sass --watch scss/main.scss  css/main.css"
+6- TERMINAL ---- npm run sass:watch
+
+7- TERMINAL --- npm install bootstrap
+
+8- En tu mian.scss
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+Link purge css
+https://purgecss.com/CLI.html#installation
+
+1- CMD ---- npm i -g purgecss
+2- EDITOR-- script en package.json
+	"build":"purgecss --css css/main.css --content *.html -o css/reducido.css"
+4- CMD --- npm run build
+
+------ colores -----
+    'uno': #af40f6,
+    'dos': #df1ce6,
+    'tres':#bb20c1,
+    'cuatro':#ecdde9,
+    'cinco': #9b9a9b,
+    'seis': #292829,
+    'siete':#e205bb,
+    'ocho':#dfa1d4,
+    'nueve':#bd9eb8,
+    'diez':#e7cfe3,
+    'once': #6e646c,
+    'doce': #7f3472,
+    'trece':#3f393e,
+------- Shadow ----------------
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+------------------------------------------------------------------------------------------
+
+@mixin medias ($breakpoint){
+    @if $breakpoint == mobile{
+        @media (width <480px){
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media (width < 600px){
+            @content;
+        }
+    }
+    @if $breakpoint == desktop{
+        @media (width < 1200px){
+            @content;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,136 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+*{
+	font-family: 'Oswald', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/*fondos colores*/
+.bg-dark{
+	background-color: #262525
+}
+
+.bg-danger{
+	background-color: #C11111
+}
+
+.bg-info{
+	background-color: #0065c3
+}
+
+.bg-success{
+	background-color: #12E73F
+}
+
+.bg-warning{
+	background-color: #E76424
+}
+
+/*end fondos */
+
+
+section{
+	display: flex;
+	padding: 10px;
+	justify-content: space-between;
+}
+
+
+div{
+	color: black;
+	font-size: 2em;
+	border:solid 1px white;
+	border-radius: 5px;
+	margin: 30px;
+	height: 30vh;
+	padding: 30px;
+	display: flex;
+	align-items: center;
+}
+
+
+/* clases para los temas de hoy*/
+
+.linear-gradient{
+	background: linear-gradient(to left, rgb(241, 164, 177), rgb(238, 14, 238));
+}
+
+.transform:hover{
+	transform: translateX(-50px);
+	cursor: pointer; 
+	transition: all 2s;
+}
+
+.rotate:hover{
+	transform: rotate(45deg);
+	cursor: pointer; 
+	transition: all 2s;
+}
+
+.scale:hover{
+	transform: scale(1.1);
+	cursor: pointer; 
+	transition: all 2s;
+}
+
+.skew:hover{
+	transform: skew(-45deg);
+	cursor: pointer; 
+	transition: all 2s;
+}
+
+@keyframes animateDiv{
+	0%{background-color: pink; width: 0%;}
+	25%{background-color: deeppink; width: 50%;}
+	50%{background-color: violet; width: 100%;}
+	75%{background-color: rgb(199, 133, 144);width: 50%;}
+	100%{background-color: rgb(152, 33, 152); width: 0%;}
+}
+
+.animate{
+	animation-name: animateDiv;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	/* animation-delay: 4s; */
+}
+
+@keyframes textAlpha{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+h3{
+	animation-name: textAlpha;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+}
+
+.transition{
+	background-color: yellow;
+}
+
+.transition:hover{
+	background-color: red;
+	transition: all 2s ease;
+	cursor: pointer;
+}
+
+
+button{
+	border: none;
+	padding: 4px 12px;
+	background: linear-gradient(to top, pink, deeppink);
+	border-radius: 3px;
+	margin: 30px;
+}
+
+button:hover{
+	background: linear-gradient(to top, deeppink, pink);
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+
