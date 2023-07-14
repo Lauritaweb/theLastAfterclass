@@ -1,20 +1,11 @@
--Para clonar el repo
-
-git clone https://github.com/Lauritaweb/theLastAfterclass.git
+-Para clonar el repo: git clone https://github.com/Lauritaweb/theLastAfterclass.git
 
 
--Para instalar las dependencias
+-Para instalar las dependencias: npm i
 
-npm i
+-Para compilar sass: npm run sass:watch
 
--Para compilar sass
-
-npm run sass:watch
-
--Para purgar
-
-npm run build
-
+-Para purgar: npm run build
 
 enjoy 😎!
 
